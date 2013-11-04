@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.jk.hfh_app.R;
+import tracer.database.CustomPOI;
 import tracer.view.MapLocation;
 import tracer.logicObjects.POI;
 
@@ -21,19 +22,24 @@ import java.util.ArrayList;
 public class MapActivity extends Activity implements LocationListener {
 
     public static ArrayList<POI> poiList = new ArrayList<POI>();
+
     public static double maxNorth;
     public static double maxSouth;
     public static double maxEast;
     public static double maxWest;
-
+    private static Integer numberOfPOI = 0;
+    //    private Location location;
+//    private Location previousLocation;
+//    private CustomPOI poi;
     private POI poi;
     private LocationManager myLocationManager;
     private LocationListener myLocationLister;
-    private TextView lattitude;
-    private TextView longitude;
-    private TextView distance;
+    private TextView lattitudeView;
+    private TextView longitudeView;
+    private TextView distanceView;
     private MapLocation myLocationView;
-    private boolean first = true;
+    private boolean firstPoi = true;
+    private static double distanceValue = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +50,9 @@ public class MapActivity extends Activity implements LocationListener {
         myLocationLister = this;
         myLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, myLocationLister);
 
-        this.lattitude = (TextView) findViewById(R.id.tv_lattitude);
-        this.longitude = (TextView) findViewById(R.id.tv_longitude);
-        this.distance = (TextView) findViewById(R.id.tv_distance);
+        this.lattitudeView = (TextView) findViewById(R.id.tv_lattitude);
+        this.longitudeView = (TextView) findViewById(R.id.tv_longitude);
+        this.distanceView = (TextView) findViewById(R.id.tv_distance);
 
         myLocationView = new MapLocation(this);
         LinearLayout ll = (LinearLayout) findViewById(R.id.ll_mapView);
@@ -56,11 +62,36 @@ public class MapActivity extends Activity implements LocationListener {
     @Override
     public void onLocationChanged(Location location) {
         this.poi = new POI(location);
+        this.poi.order_id = MapActivity.numberOfPOI;
+        MapActivity.numberOfPOI++;
 
-        if (first == false) {
+//        try {
+//            POI pnull = new POI((Location) null);
+//        } catch (Exception e) {
+//            Log.e("pnull", e.toString());
+//        }
+//        try {
+
+//        } catch (Exception e) {
+//            Log.e("pempty", e.toString());
+//        }
+//        try {
+//            POI pstringnull = new POI((String) null);
+//        } catch (Exception e) {
+//            Log.e("pstringnull", e.toString());
+//        }
+//        try {
+//            POI pLocationEmpty = new POI(new Location(""));
+//        } catch (Exception e) {
+//            Log.e("pLocationEmpty", e.toString());
+//        }
+
+        if (firstPoi == false) {
             POI lastPoi = poiList.get(poiList.size() - 1);
-            POI.distance += this.poi.distanceTo(lastPoi);
-            this.distance.setText(String.format("%.2f km, poi: %d", POI.distance / 1000, poiList.size()));
+//            Location last = new Location(null);
+
+            MapActivity.distanceValue += this.poi.distanceTo(lastPoi);
+            this.distanceView.setText(String.format("%.2f km, poi: %d", MapActivity.distanceValue / 1000, poiList.size()));
             checkMaximumDimensions(this.poi);
         } else {
             MapActivity.maxNorth = location.getLatitude();
@@ -69,10 +100,10 @@ public class MapActivity extends Activity implements LocationListener {
             MapActivity.maxWest = location.getLongitude();
         }
 
-        this.first = false;
+        this.firstPoi = false;
         poiList.add(poi);
-        this.lattitude.setText(String.valueOf(poi.getLatitude()));
-        this.longitude.setText(String.valueOf(poi.getLongitude()));
+        this.lattitudeView.setText(String.valueOf(poi.getLatitude()));
+        this.longitudeView.setText(String.valueOf(poi.getLongitude()));
         myLocationView.invalidate();
     }
 
@@ -113,8 +144,13 @@ public class MapActivity extends Activity implements LocationListener {
     public void recording(View view) {
         if (((Button) view).getText().toString().equals("Start recording")) {
             ((Button) view).setText("Stop recording");
+            // save track in database (set in settings if save automatically)
+            //
+//            Location loca = poiList.get(0);
+
         } else {
             ((Button) view).setText("Start recording");
+
         }
     }
 

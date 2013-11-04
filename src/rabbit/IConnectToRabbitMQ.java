@@ -32,7 +32,7 @@ public abstract class IConnectToRabbitMQ {
         MyExchangeType = exchangeType;
     }
 
-    public void Dispose() {
+    public void Dispose() throws IOException {
         Running = false;
 
         try {

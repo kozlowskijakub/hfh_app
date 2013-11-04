@@ -8,4 +8,8 @@ package tracer.logicObjects;
  * To change this template use File | Settings | File Templates.
  */
 public class Track {
+    public String name;
+    public long time;
+    public double distance;
+    public double amplitude;
 }

@@ -14,9 +14,6 @@ import java.io.IOException;
  */
 public class MessageConsumer extends IConnectToRabbitMQ {
 
-    public MessageConsumer(String server, String exchange, String exchangeType) {
-        super(server, exchange, exchangeType);
-    }
 
     //The Queue name for this consumer
     private String mQueue;
@@ -25,12 +22,17 @@ public class MessageConsumer extends IConnectToRabbitMQ {
     // kast message to poast back
     private byte[] mLastMessage;
 
+    private Handler mMessageHandler = new Handler();
+    private Handler mConsumerHandler = new Handler();
+
+    public MessageConsumer(String server, String exchange, String exchangeType) {
+        super(server, exchange, exchangeType);
+    }
+
     // inteface to be implemented by an object that is interested
     public interface OnReceiveMessageHandler {
         public void onReceiveMessage(byte[] message);
     }
-
-    ;
 
     // A reference to the listener, we can only have one at a time
     private OnReceiveMessageHandler mOnReceiveMessageHandler;
@@ -38,11 +40,6 @@ public class MessageConsumer extends IConnectToRabbitMQ {
     public void setmOnReceiveMessageHandler(OnReceiveMessageHandler handler) {
         mOnReceiveMessageHandler = handler;
     }
-
-    ;
-
-    private Handler mMessageHandler = new Handler();
-    private Handler mConsumerHandler = new Handler();
 
     // Create runnable for postiong back to main thread
 
@@ -102,12 +99,23 @@ public class MessageConsumer extends IConnectToRabbitMQ {
 
             @Override
             public void run() {
-                while(Running){
+                while (Running) {
                     QueueingConsumer.Delivery delivery;
                 }
             }
         };
         thread.start();
+    }
+
+    public void Dispose() throws IOException {
+        Running = false;
+
+        if (mConnection != null) {
+            mConnection.close();
+        }
+        if (mModel != null) {
+            mModel.abort();
+        }
     }
 
 }

@@ -4,13 +4,18 @@
           android:versionCode="1"
           android:versionName="1.0">
     <uses-sdk android:minSdkVersion="18"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
-        <activity android:name="connection.LoginActivity"
+        <activity android:name="tracer.activities.MapMainActivity"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name="connection.LoginActivity"></activity>
+        <activity android:name="tracer.activities.MapActivity"></activity>
+        <activity android:name="dashboard.DashboardActivity"></activity>
+        <activity android:name="tracer.activities.MapMainActivity"></activity>
     </application>
 </manifest>

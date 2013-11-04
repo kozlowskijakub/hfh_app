@@ -23,57 +23,40 @@
     </option>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="pLocationEmpty" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4dcf595f-c521-480c-b959-85b882b3b808" name="Default" comment="Project settings modificaitons including changes/deletes/create under&#10; gen/com &#10; jk/hfh_app&#10; .idea&#10; manifest&#10; ant.properties&#10; hfh_app.iml">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+    <list default="true" id="4dcf595f-c521-480c-b959-85b882b3b808" name="Default" comment="Added tracker functionality and layouts. Other layouts modificaitons.">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/Connection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tracer/database/CustomPOI.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dashboard/DashboardActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tracer/calculations/GeoCalculations.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tracer/view/GpsStatus.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tracer/database/DatabaseHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/rabbit/HomeActivity.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/rabbit/IConnectToRabbitMQ.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/connection/LoginActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tracer/activities/MapActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tracer/view/MapLocation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tracer/activities/MapMainActivity.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/rabbit/MessageConsumer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tracer/logicObjects/POI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tracer/logicObjects/SimulatedSatellite.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/main_main.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/mapview.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/neworderview.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/orderoverchooser.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/rabbitmq_client.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/serviceitem.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/rabbit/NewTask.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tracer/logicObjects/Track.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/example/hfh_app/MainActivity.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/gen/com/example/hfh_app/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/jk/hfh_app/BuildConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/gen/com/example/hfh_app/Manifest.java" afterPath="$PROJECT_DIR$/gen/com/jk/hfh_app/Manifest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/gen/com/example/hfh_app/R.java" afterPath="$PROJECT_DIR$/gen/com/jk/hfh_app/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ant.properties" afterPath="$PROJECT_DIR$/ant.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hfh_app.iml" afterPath="$PROJECT_DIR$/hfh_app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/login.xml" afterPath="$PROJECT_DIR$/res/layout/login.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tracer/activities/MapActivity.java" afterPath="$PROJECT_DIR$/src/tracer/activities/MapActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tracer/view/MapLocation.java" afterPath="$PROJECT_DIR$/src/tracer/view/MapLocation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tracer/activities/MapMainActivity.java" afterPath="$PROJECT_DIR$/src/tracer/activities/MapMainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tracer/logicObjects/POI.java" afterPath="$PROJECT_DIR$/src/tracer/logicObjects/POI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/rabbitmq_client.xml" afterPath="$PROJECT_DIR$/.idea/libraries/rabbitmq_client.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hfh_app.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383554796048" ignored="false" />
+    <file path="/Dummy.txt" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383595875358" ignored="false" />
     <file path="/login.xml" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383550750901" ignored="false" />
     <file path="/corners.xml" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1381700705552" ignored="false" />
     <file path="/LoginActivity.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383553567097" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383552819422" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383592062027" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/example/hfh_app/R.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1381728707012" ignored="false" />
-    <file path="/fragment.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383552222329" ignored="false" />
+    <file path="/fragment.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383592081967" ignored="false" />
     <file path="/serviceitem.xml" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1381734770167" ignored="false" />
     <file path="/orderoverview.xml" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1381769108122" ignored="false" />
     <file path="/MySQLiteHelper.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1381745800724" ignored="false" />
@@ -92,14 +75,14 @@
     <file path="/ProductDetailsActivity.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1381814831499" ignored="false" />
     <file path="/MainActivity.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383549360231" ignored="false" />
     <file path="/login.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1381818763771" ignored="false" />
-    <file path="/IConnectToRabbitMQ.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1381848847965" ignored="false" />
-    <file path="/a.dummy" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1381846738189" ignored="false" />
+    <file path="/IConnectToRabbitMQ.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383575858049" ignored="false" />
+    <file path="/a.dummy" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383582654045" ignored="false" />
     <file path="/MessageCOnsumer.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1381849022581" ignored="false" />
     <file path="/MessageCOnsumer (Case Conflict).java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383547601023" ignored="false" />
     <file path="$PROJECT_DIR$/../gps_lab3/.idea/workspace.xml" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383489027969" ignored="false" />
     <file path="$PROJECT_DIR$/../gps_lab3/gen/com/example/gps_lab3/BuildConfig.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383487509659" ignored="false" />
     <file path="$PROJECT_DIR$/../gps_lab3/src/activities/MapActivity.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383488984000" ignored="false" />
-    <file path="/MapActivity.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383552734431" ignored="false" />
+    <file path="/MapActivity.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383592419422" ignored="false" />
     <file path="$PROJECT_DIR$/../gps_lab3/res/layout/mapview.xml" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383488684922" ignored="false" />
     <file path="$PROJECT_DIR$/../gps_lab3/src/activities/MainActivity.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383488564871" ignored="false" />
     <file path="/mapview.xml" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383553861716" ignored="false" />
@@ -111,6 +94,20 @@
     <file path="$PROJECT_DIR$/../../pkc_lab4/Server/src/Server.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383492208085" ignored="false" />
     <file path="$PROJECT_DIR$/src/traclermodule/activities/calculations/GeoCalc.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383547781720" ignored="false" />
     <file path="/main_main.xml" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383553831957" ignored="false" />
+    <file path="/MapMainActivity.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383582916105" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/jk/hfh_app/BuildConfig.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383563015506" ignored="false" />
+    <file path="/HomeActivity.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383580895479" ignored="false" />
+    <file path="/MessageConsumer.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383576759147" ignored="false" />
+    <file path="/MapLocation.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383582625059" ignored="false" />
+    <file path="/DatabaseHandler.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383590538325" ignored="false" />
+    <file path="/Track.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383588883020" ignored="false" />
+    <file path="/POI.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383592681689" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Rabbit/Producer/src/EmitLog.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383594831853" ignored="false" />
+    <file path="/EmitLog.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383594815139" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Rabbit/Producer/src/NewTask.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383595454673" ignored="false" />
+    <file path="/NewTask.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383593893396" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Rabbit/Producer/src/Send.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383595319251" ignored="false" />
+    <file path="/Send.java" changelist="4dcf595f-c521-480c-b959-85b882b3b808" time="1383595316864" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,6 +195,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/tracer/activities/MapActivity.java" line="63" class="tracer.activities.MapActivity" package="tracer.activities">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -207,114 +219,7 @@
     <favorites_list name="hfh_app" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="login.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/login.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="28" selection-start="807" selection-end="807" vertical-scroll-proportion="-4.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ic_launcher.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ic_launcher.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable-ldpi/ic_launcher.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DashboardActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/DashboardActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="344" selection-end="344" vertical-scroll-proportion="0.6182213">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MapActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tracer/activities/MapActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="64" selection-start="3437" selection-end="3437" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="orderoverchooser.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/orderoverchooser.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="serviceitem.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/serviceitem.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="neworderview.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/neworderview.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mapview.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/mapview.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="34" selection-start="392" selection-end="392" vertical-scroll-proportion="-0.3">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/main_main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="32" selection-start="328" selection-end="328" vertical-scroll-proportion="-1.8">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -337,22 +242,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/tracer/view/GpsStatus.java" />
-        <option value="$PROJECT_DIR$/src/tracer/store/POI.java" />
-        <option value="$PROJECT_DIR$/src/tracer/view/MyLocation.java" />
-        <option value="$PROJECT_DIR$/src/tracer/view/MapLocation.java" />
-        <option value="$PROJECT_DIR$/src/tracer/calculations/GeoCalc.java" />
-        <option value="$PROJECT_DIR$/src/tracer/calculations/GeoCalculations.java" />
-        <option value="$PROJECT_DIR$/src/hfh/ServiceDashboardActivity.java" />
-        <option value="$PROJECT_DIR$/src/hfh/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/src/hfh/connection/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/tracer/activities/MapActivity.java" />
-        <option value="$PROJECT_DIR$/src/connection/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/mapview.xml" />
-        <option value="$PROJECT_DIR$/res/layout/main_main.xml" />
         <option value="$PROJECT_DIR$/res/layout/login.xml" />
         <option value="$PROJECT_DIR$/src/dashboard/DashboardActivity.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/rabbit/IConnectToRabbitMQ.java" />
+        <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/src/rabbit/MessageConsumer.java" />
+        <option value="$PROJECT_DIR$/src/rabbit/HomeActivity.java" />
+        <option value="$PROJECT_DIR$/src/tracer/view/MapLocation.java" />
+        <option value="$PROJECT_DIR$/src/tracer/activities/MapMainActivity.java" />
+        <option value="$PROJECT_DIR$/src/tracer/logicObjects/Track.java" />
+        <option value="$PROJECT_DIR$/src/tracer/database/CustomPOI.java" />
+        <option value="$PROJECT_DIR$/src/tracer/database/DatabaseHandler.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/tracer/activities/MapActivity.java" />
+        <option value="$PROJECT_DIR$/src/tracer/logicObjects/POI.java" />
+        <option value="$PROJECT_DIR$/src/rabbit/NewTask.java" />
       </list>
     </option>
   </component>
@@ -426,19 +331,73 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tracer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hfh_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hfh_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tracer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hfh_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hfh_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hfh_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hfh_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Rabbit" />
     <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -447,6 +406,7 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -464,7 +424,29 @@
       <recent name="$PROJECT_DIR$/res/drawable-hdpi" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Application.hfh_app">
+  <component name="RunManager" selected="Application.NewTask">
+    <configuration default="false" name="NewTask" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="rabbit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="rabbit.NewTask" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="hfh_app" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -592,7 +574,7 @@
     </configuration>
     <configuration default="false" name="hfh_app" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="hfh_app" />
-      <option name="ACTIVITY_CLASS" value="connection.LoginActivity" />
+      <option name="ACTIVITY_CLASS" value="tracer.activities.MapMainActivity" />
       <option name="MODE" value="specific_activity" />
       <option name="DEPLOY" value="true" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
@@ -608,9 +590,15 @@
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Android Application.hfh_app" />
+      <item index="1" class="java.lang.String" itemvalue="Application.NewTask" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.NewTask" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -623,39 +611,48 @@
       <created>1381662736985</created>
       <updated>1381662736985</updated>
     </task>
+    <task id="LOCAL-00001" summary="Project settings modificaitons including changes/deletes/create under&#10; gen/com &#10; jk/hfh_app&#10; .idea&#10; manifest&#10; ant.properties&#10; hfh_app.iml">
+      <created>1383554856693</created>
+      <updated>1383554856693</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added tracker functionality and layouts. Other layouts modificaitons.">
+      <created>1383555036428</created>
+      <updated>1383555036428</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="24" width="1440" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32424676" sideWeight="0.824" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.67107004" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27658045" sideWeight="0.8229855" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4266843" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4319683" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25824964" sideWeight="0.67107004" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17701453" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32651454" sideWeight="0.67107004" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28192252" sideWeight="0.68031704" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31968296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32424676" sideWeight="0.824" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.67107004" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27514368" sideWeight="0.824" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4266843" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39630118" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32651454" sideWeight="0.67107004" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -702,7 +699,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project settings modificaitons including changes/deletes/create under&#10; gen/com &#10; jk/hfh_app&#10; .idea&#10; manifest&#10; ant.properties&#10; hfh_app.iml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tracker functionality and layouts. Other layouts modificaitons." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -717,6 +714,7 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="Project settings modificaitons including changes/deletes/create under&#10; gen/com &#10; jk/hfh_app&#10; .idea&#10; manifest&#10; ant.properties&#10; hfh_app.iml" />
+    <MESSAGE value="Added tracker functionality and layouts. Other layouts modificaitons." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -726,133 +724,135 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/tracer/logicObjects/POI.java">
+    <entry file="file://$USER_HOME$/adt-bundle-linux-x86_64-20130917/sdk/sources/android-18/android/view/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
+        <state line="3641" column="50" selection-start="141600" selection-end="141600" vertical-scroll-proportion="0.020519836">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tracer/view/MapLocation.java">
+    <entry file="file://$PROJECT_DIR$/src/rabbit/IConnectToRabbitMQ.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
+        <state line="34" column="46" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="26" selection-start="432" selection-end="432" vertical-scroll-proportion="0.22026432">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tracer/calculations/GeoCalculations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
+        <state line="11" column="13" selection-start="232" selection-end="232" vertical-scroll-proportion="0.2754591">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/connection/Connection.java">
+    <entry file="file://$PROJECT_DIR$/src/tracer/view/MapLocation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="23" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0">
+        <state line="107" column="40" selection-start="4182" selection-end="4182" vertical-scroll-proportion="1.5631399">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rabbit/MessageConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="38" selection-start="756" selection-end="756" vertical-scroll-proportion="-11.44">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1284#1432#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1470#1571#0" expanded="true" />
+            <element signature="e#1564#1565#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rabbit/HomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="54" selection-start="879" selection-end="879" vertical-scroll-proportion="0.4512195">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1137#1596#0" expanded="true" />
+            <element signature="e#1585#1586#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tracer/logicObjects/SimulatedSatellite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="23" selection-start="131" selection-end="134" vertical-scroll-proportion="0.0">
+        <state line="8" column="65" selection-start="488" selection-end="488" vertical-scroll-proportion="0.2003339">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/connection/LoginActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/tracer/database/DatabaseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.85636115">
+        <state line="193" column="48" selection-start="6760" selection-end="6760" vertical-scroll-proportion="0.486631">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4548#4555#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tracer/database/CustomPOI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="30" selection-start="203" selection-end="203" vertical-scroll-proportion="0.22537562">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tracer/logicObjects/Track.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="17" selection-start="295" selection-end="295" vertical-scroll-proportion="0.32554257">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tracer/activities/MapMainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="32" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.2682927">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tracer/logicObjects/POI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="54" selection-start="395" selection-end="395" vertical-scroll-proportion="0.41039672">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tracer/activities/MapActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="64" selection-start="3437" selection-end="3437" vertical-scroll-proportion="0.0">
+        <state line="77" column="48" selection-start="2568" selection-end="2568" vertical-scroll-proportion="0.47308782">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/serviceitem.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/rabbit/NewTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/orderoverchooser.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/neworderview.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/mapview.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="34" selection-start="392" selection-end="392" vertical-scroll-proportion="-0.3">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="32" selection-start="328" selection-end="328" vertical-scroll-proportion="-1.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/login.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="28" selection-start="807" selection-end="807" vertical-scroll-proportion="-4.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-ldpi/ic_launcher.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/DashboardActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="344" selection-end="344" vertical-scroll-proportion="0.6182213">
-          <folding />
+        <state line="44" column="42" selection-start="1569" selection-end="1569" vertical-scroll-proportion="0.5896033">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -10,7 +10,8 @@ import android.location.Location;
  * To change this template use File | Settings | File Templates.
  */
 public class POI extends Location {
-    public static double distance = 0;
+    public long order_id;
+
 
     public POI(String provider) {
         super(provider);
@@ -20,3 +21,4 @@ public class POI extends Location {
         super(l);
     }
 }
+

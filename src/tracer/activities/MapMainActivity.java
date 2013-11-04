@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
-import com.example.hfh_app.shoppingcard.R;
+import com.jk.hfh_app.R;
 import tracer.view.GpsStatus;
 
 import java.util.ArrayList;
@@ -38,11 +38,7 @@ public class MapMainActivity extends Activity implements android.location.GpsSta
 
     public void showMap(View view) {
         Intent intent = new Intent(this, MapActivity.class);
-        try {
-            startActivity(intent);
-        } catch (Exception e) {
-            Log.e("myException", e.toString());
-        }
+        startActivity(intent);
     }
 
     @Override
@@ -54,8 +50,7 @@ public class MapMainActivity extends Activity implements android.location.GpsSta
             locationManager.addGpsStatusListener(this);
             drawGps(new View(this));
         } catch (Exception e) {
-
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            Log.e("drawGpsaddGpsStatusListener", e.toString());
         }
     }
 

@@ -32,15 +32,10 @@ public class MapLocation extends View {
 
         if ((geoHeight / getHeight()) > (geoWidth / getWidth())) {
             pixelScale = getHeight() / geoHeight;
-            Log.i("bigger", "(geoHeight / getHeight()");
         } else {
             pixelScale = getWidth() / geoWidth;
-            Log.i("bigger", "(geoWidth / getWidth())");
         }
 
-        Log.i("geoHeight", String.valueOf(geoHeight));
-        Log.i("geoWidth", String.valueOf(geoWidth));
-        Log.i("pixelScale", String.valueOf(pixelScale));
         // pixelScale says that one pixel of scale
         return pixelScale;
     }
@@ -49,14 +44,8 @@ public class MapLocation extends View {
     protected void onDraw(Canvas canvas) {
         setBackgroundColor(Color.WHITE);
         paint.setColor(Color.RED);
-//        Log.i("canvas.getWidth()", String.valueOf(canvas.getWidth()));
-//        Log.i("canvas.getHeight()", String.valueOf(canvas.getHeight()));
-//        Log.i("getWidth()", String.valueOf(getWidth()));
-//        Log.i("getHeight()", String.valueOf(getHeight()));
-
 
         drawGrid(canvas);
-
         if (MapActivity.poiList.size() > 0)
             drawPOITrack(canvas);
 
@@ -99,8 +88,8 @@ public class MapLocation extends View {
         paint.setColor(Color.BLACK);
 
         canvas.drawText(String.valueOf(String.format("1 _ =  %.0f m", GeoCalculations.countDistance(0, 0, 0, 30 * 1 / scale) * 1000)), getWidth() - 100, getHeight() - 20, paint);
-        canvas.drawText(String.valueOf(String.format("vert =  %.2f km", GeoCalculations.countDistance(0, 0, 0, (MapActivity.maxNorth - MapActivity.maxSouth)))), getWidth() - 150, getHeight() - 40, paint);
-        canvas.drawText(String.valueOf(String.format("hor =  %.2f km", GeoCalculations.countDistance(0, 0, 0, (MapActivity.maxEast - MapActivity.maxWest)))), getWidth() - 150, getHeight() - 60, paint);
+//        canvas.drawText(String.valueOf(String.format("vert =  %.2f km", GeoCalculations.countDistance(0, 0, 0, (MapActivity.maxNorth - MapActivity.maxSouth)))), getWidth() - 150, getHeight() - 40, paint);
+//        canvas.drawText(String.valueOf(String.format("hor =  %.2f km", GeoCalculations.countDistance(0, 0, 0, (MapActivity.maxEast - MapActivity.maxWest)))), getWidth() - 150, getHeight() - 60, paint);
         paint.setColor(Color.RED);
         paint.setTextSize(paint.getTextSize() - 5);
 
@@ -113,11 +102,11 @@ public class MapLocation extends View {
         int vertLines = getWidth() / BAR_SPACE;
         int horLines = getHeight() / BAR_SPACE;
 
-        //draw horizontal
+        //draw horizontal lines
         for (int i = 0; i <= horLines; i++) {
             canvas.drawLine(0, BAR_SPACE * i, getWidth(), BAR_SPACE * i, barpPainter);
         }
-        //draw vertical
+        //draw vertical lines
         for (int i = 0; i <= vertLines; i++) {
             canvas.drawLine(BAR_SPACE * i, 0, BAR_SPACE * i, getHeight(), barpPainter);
         }
