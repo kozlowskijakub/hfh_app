@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@android:color/white"
+            >
+        <TextView
+                android:id="@+id/ivIcon_si"
+                android:layout_height="wrap_content"
+                android:layout_width="0px"
+                android:layout_weight="2"
+                android:text="view"
+                android:textStyle="bold|italic"
+                android:textSize="10px"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:background="@android:color/white"
+                />
+
+        <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0px"
+                android:layout_weight="5"
+                android:text="description"
+                android:textStyle="bold|italic"
+                android:textSize="10px"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                />
+        <TextView
+                android:id="@+id/tvPrice_si"
+                android:layout_height="wrap_content"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:textStyle="bold|italic"
+                android:textSize="10px"
+                android:text="price"
+                android:textColor="@android:color/black"
+                android:gravity="center"/>
+        <TextView
+                android:id="@+id/cbCheck_si"
+                android:layout_height="wrap_content"
+                android:layout_width="0px"
+                android:layout_weight="1.5"
+                android:textStyle="bold|italic"
+                android:textSize="10px"
+                android:text="ordered"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                />
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        <LinearLayout android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent">
+
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <ImageView
+                        android:id="@+id/ivIcon_si"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:padding="5px"
+                        android:src="@drawable/ic_launcher"/>
+
+                <TextView
+                        android:id="@+id/tvDetailDesc_si"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="5"
+                        android:text="more detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service description"
+                        android:textSize="10px"
+                        android:textStyle="bold"
+                        android:scrollbars="vertical"
+                        android:layout_gravity="center"
+                        android:maxLines="4"/>
+                <TextView
+                        android:id="@+id/tvPrice_si"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="41$"
+                        android:textSize="10px"
+                        android:textStyle="bold"/>
+                <CheckBox
+                        android:id="@+id/cbCheck_si"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1.5"
+                        android:layout_gravity="center"
+                        />
+
+
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <ImageView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:padding="5px"
+                        android:src="@drawable/ic_launcher"/>
+
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="5"
+                        android:text="more detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service description"
+                        android:textSize="10px"
+                        android:textStyle="bold"
+                        android:scrollbars="vertical"
+                        android:layout_gravity="center"
+                        android:maxLines="4"/>
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="41$"
+                        android:textSize="10px"
+                        android:textStyle="bold"/>
+                <CheckBox
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1.5"
+                        android:layout_gravity="center"/>
+
+
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <ImageView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:padding="5px"
+                        android:src="@drawable/ic_launcher"/>
+
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="5"
+                        android:text="more detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service description"
+                        android:textSize="10px"
+                        android:textStyle="bold"
+                        android:scrollbars="vertical"
+                        android:layout_gravity="center"
+                        android:maxLines="4"/>
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="41$"
+                        android:textSize="10px"
+                        android:textStyle="bold"/>
+                <CheckBox
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1.5"
+                        android:layout_gravity="center"/>
+
+
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <ImageView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:padding="5px"
+                        android:src="@drawable/ic_launcher"/>
+
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="5"
+                        android:text="more detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service description"
+                        android:textSize="10px"
+                        android:textStyle="bold"
+                        android:scrollbars="vertical"
+                        android:layout_gravity="center"
+                        android:maxLines="4"/>
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="41$"
+                        android:textSize="10px"
+                        android:textStyle="bold"/>
+                <CheckBox
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1.5"
+                        android:layout_gravity="center"/>
+
+
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <ImageView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:padding="5px"
+                        android:src="@drawable/ic_launcher"/>
+
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="5"
+                        android:text="more detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service description"
+                        android:textSize="10px"
+                        android:textStyle="bold"
+                        android:scrollbars="vertical"
+                        android:layout_gravity="center"
+                        android:maxLines="4"/>
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="41$"
+                        android:textSize="10px"
+                        android:textStyle="bold"/>
+                <CheckBox
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1.5"
+                        android:layout_gravity="center"/>
+
+
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <ImageView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:padding="5px"
+                        android:src="@drawable/ic_launcher"/>
+
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="5"
+                        android:text="more detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service description"
+                        android:textSize="10px"
+                        android:textStyle="bold"
+                        android:scrollbars="vertical"
+                        android:layout_gravity="center"
+                        android:maxLines="4"/>
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="41$"
+                        android:textSize="10px"
+                        android:textStyle="bold"/>
+                <CheckBox
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1.5"
+                        android:layout_gravity="center"
+                        />
+
+
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <ImageView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:padding="5px"
+                        android:src="@drawable/ic_launcher"/>
+
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="5"
+                        android:text="more detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service description"
+                        android:textSize="10px"
+                        android:textStyle="bold"
+                        android:scrollbars="vertical"
+                        android:layout_gravity="center"
+                        android:maxLines="4"/>
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="41$"
+                        android:textSize="10px"
+                        android:textStyle="bold"/>
+                <CheckBox
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1.5"
+                        android:layout_gravity="center"
+                        />
+
+
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <ImageView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:padding="5px"
+                        android:src="@drawable/ic_launcher"/>
+
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="5"
+                        android:text="more detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service description"
+                        android:textSize="10px"
+                        android:textStyle="bold"
+                        android:scrollbars="vertical"
+                        android:layout_gravity="center"
+                        android:maxLines="4"/>
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="41$"
+                        android:textSize="10px"
+                        android:textStyle="bold"/>
+                <CheckBox
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1.5"
+                        android:layout_gravity="center"
+                        />
+
+
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <ImageView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:padding="5px"
+                        android:src="@drawable/ic_launcher"/>
+
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="5"
+                        android:text="more detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service description"
+                        android:textSize="10px"
+                        android:textStyle="bold"
+                        android:scrollbars="vertical"
+                        android:layout_gravity="center"
+                        android:maxLines="4"/>
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="41$"
+                        android:textSize="10px"
+                        android:textStyle="bold"/>
+                <CheckBox
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1.5"
+                        android:layout_gravity="center"
+                        />
+
+
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <ImageView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:padding="5px"
+                        android:src="@drawable/ic_launcher"/>
+
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="5"
+                        android:text="more detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service description"
+                        android:textSize="10px"
+                        android:textStyle="bold"
+                        android:scrollbars="vertical"
+                        android:layout_gravity="center"
+                        android:maxLines="4"/>
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="41$"
+                        android:textSize="10px"
+                        android:textStyle="bold"/>
+                <CheckBox
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1.5"
+                        android:layout_gravity="center"
+                        />
+
+
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <ImageView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="2"
+                        android:layout_gravity="center"
+                        android:padding="5px"
+                        android:src="@drawable/ic_launcher"/>
+
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="5"
+                        android:text="more detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service descriptionmore detailed service description"
+                        android:textSize="10px"
+                        android:textStyle="bold"
+                        android:scrollbars="vertical"
+                        android:layout_gravity="center"
+                        android:maxLines="4"/>
+                <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="41$"
+                        android:textSize="10px"
+                        android:textStyle="bold"/>
+                <CheckBox
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="0px"
+                        android:layout_weight="1.5"
+                        android:layout_gravity="center"
+                        />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
