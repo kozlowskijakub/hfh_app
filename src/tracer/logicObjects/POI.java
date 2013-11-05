@@ -12,7 +12,6 @@ import android.location.Location;
 public class POI extends Location {
     public long order_id;
 
-
     public POI(String provider) {
         super(provider);
     }

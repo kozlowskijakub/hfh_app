@@ -12,12 +12,7 @@ import android.os.Bundle;
  */
 public class DashboardActivity extends Activity {
 
-
     public void onCreate(Bundle createOnInstance) {
 
     }
-
-
-
-
 }

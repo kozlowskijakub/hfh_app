@@ -11,5 +11,5 @@ public class Track {
     public String name;
     public long time;
     public double distance;
-    public double amplitude;
+    public double altitude;
 }

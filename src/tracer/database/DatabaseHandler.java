@@ -3,23 +3,16 @@ package tracer.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.location.Location;
+import android.util.Log;
 import tracer.logicObjects.POI;
 import tracer.logicObjects.Track;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: jakub
- * Date: 11/4/13
- * Time: 5:48 PM
- * To change this template use File | Settings | File Templates.
- */
+
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     private static final Integer DATABASE_VERSION = 1;
@@ -46,6 +39,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String POINT_TIME = "time";
     private static final String POINT_ACCURACY = "accuracy";
 
+    private static DatabaseHandler database = null;
+
 
 //    INTEGER: This SQLite data type generally contain INT, INTEGER, TINYINT, SMALLINT, MEDIUMINT, BIGINT, UNSIGNED BIG INT, INT2, INT8.
 //
@@ -59,13 +54,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
     private static final String CREATE_TABLE_TRACK = "CREATE TABLE track " +
-            "(id INTEGER PRIMARY AUTOINCREMENT KEY NOT NULL," +
+            "(id INTEGER PRIMARY KEY AUTOINCREMENT ," +
             "name TEXT," +
             "distance REAL, " +
             "time LONG, " +
             "altitude REAL)";
     private static final String CREATE_TABLE_POINT = "CREATE TABLE point " +
-            "(id INTEGER PRIMARY AUTOINCREMENT KEY NOT NULL," +
+            "(id INTEGER PRIMARY KEY AUTOINCREMENT ," +
             "order_id INTEGER," +
             "latitude REAL," +
             "longitude REAL, " +
@@ -75,10 +70,25 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             "id_track INTEGER NOT NULL," +
             "FOREIGN KEY (id_track) REFERENCES track(id))";
 
-    public DatabaseHandler(Context context) {
+    private DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    public void dropDatabase(Context context) {
+        try {
+            context.deleteDatabase(DATABASE_NAME);
+        } catch (Exception e) {
+            Log.e("value", e.toString());
+        }
+    }
+
+    public static DatabaseHandler getInstance(Context context) {
+
+        if (database == null) {
+            database = new DatabaseHandler(context);
+        }
+        return database;
+    }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -88,18 +98,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DRIO TABLE IF EXISTS " + TABLE_POINT);
-        db.execSQL("DRIO TABLE IF EXISTS " + TABLE_TRACK);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_POINT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TRACK);
         onCreate(db);
     }
 
-    // create new track
-    public long createTrack(Track track, long[] id) {
+    public long createTrack(Track track) {
         SQLiteDatabase database = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-//        values.put("order_id", track.order_id);
-        values.put("amplitude", track.amplitude);
+        values.put("altitude", track.altitude);
         values.put("distance", track.distance);
         values.put("name", track.name);
         values.put("time", track.time);
@@ -108,7 +116,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         return track_id;
     }
-
 
     public Track getTrack(long track_id) {
         SQLiteDatabase database = this.getWritableDatabase();
@@ -123,7 +130,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         track.name = (cursor.getString(1));
         track.distance = (cursor.getDouble(2));
         track.time = (cursor.getLong(3));
-        track.amplitude = (cursor.getDouble(4));
+        track.altitude = (cursor.getDouble(4));
 
         return track;
     }
@@ -133,15 +140,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String select = "SELECT * FROM track";
         SQLiteDatabase database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(select, null);
-
-
         if (cursor.moveToFirst()) {
             do {
                 Track track = new Track();
                 track.name = (cursor.getString(1));
                 track.distance = (cursor.getDouble(2));
                 track.time = (cursor.getLong(3));
-                track.amplitude = (cursor.getDouble(4));
+                track.altitude = (cursor.getDouble(4));
                 tracks.add(track);
             } while (cursor.moveToFirst());
         }
@@ -150,7 +155,26 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public void deleteTrack(long track_id) {
         SQLiteDatabase database = this.getWritableDatabase();
+        deletePOIs(track_id);
         database.delete(TABLE_TRACK, "id=" + track_id, null);
+    }
+
+    public long selectMaxTrackID() {
+        long count = 0;
+        SQLiteDatabase database = this.getReadableDatabase();
+        Cursor cursor = null;
+        try {
+            cursor = database.rawQuery("SELECT * FROM track WHERE id=(SELECT max(id) FROM track)", null);
+        } catch (Exception e) {
+            Log.e("strangeException", e.toString());
+        }
+
+        if (cursor.moveToFirst()) {
+            do {
+                count = cursor.getLong(0);
+            } while (cursor.moveToNext());
+        }
+        return count;
     }
 
     public long createPOI(POI poi, long track_id) {
@@ -169,47 +193,44 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return POI_id;
     }
 
-//    public List<POI> getPOIs(long track_id) {
-//        SQLiteDatabase database = this.getWritableDatabase();
-//        List<POI> pois = new ArrayList<POI>();
-//        String select = "SELECT * FROM point where id_track=" + track_id;
-//        Cursor cursor = database.rawQuery(select, null);
-//
-//
-//        if (cursor.moveToFirst()) {
-//            do {
-//                POI poi = new POI();
-//
-//                poi. = (cursor.getString(1));
-//                track.distance = (cursor.getDouble(2));
-//                track.time = (cursor.getLong(3));
-//                track.amplitude = (cursor.getDouble(4));
-//                tracks.add(track);
-//            } while (cursor.moveToFirst());
-//        }
-//        return tracks;
-//    }
-//
-//    "CREATE TABLE point "+
-//            "(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
-//            "order_id INTEGER,"+
-//            "latitude REAL,"+
-//            "longitude REAL, "+
-//            "altitude REAL, "+
-//            "time LONG, "+
-//            "accuracy REAL,"+
-//            "id_track INTEGER NOT NULL,"+
-//            "FOREIGN KEY (id_track) REFERENCES track(id))";
+    public void createPOIs(ArrayList<POI> pois, long track_id) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        for (POI poi : pois) {
+            values.put("order_id", poi.order_id);
+            values.put("latitude", poi.getLatitude());
+            values.put("longitude", poi.getLongitude());
+            values.put("altitude", poi.getAltitude());
+            values.put("time", poi.getTime());
+            values.put("accuracy", poi.getAccuracy());
+            values.put("id_track", track_id);
+            database.insert(TABLE_POINT, null, values);
+        }
+    }
 
-    // create new Point
-//    public long createPoint(POI track, long[] id) {
-//
-//    }
-    //    "CREATE TABLE track " +
-//            "(id INTEGER PRIMARY KEY NOT NULL," +
-//            "name TEXT," +
-//            "distance REAL, " +
-//            "time LONG, " +
-//            "altitude REAL)";
+    public List<POI> getPOIs(long track_id) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        List<POI> pois = new ArrayList<POI>();
+        String select = "SELECT * FROM point where id_track=" + track_id;
+        Cursor cursor = database.rawQuery(select, null);
 
+        if (cursor.moveToFirst()) {
+            do {
+                POI poi = new POI("");
+                poi.order_id = (cursor.getInt(1));
+                poi.setLatitude(cursor.getDouble(2));
+                poi.setLongitude(cursor.getDouble(3));
+                poi.setAltitude(cursor.getDouble(4));
+                poi.setTime(cursor.getLong(5));
+                poi.setAccuracy(cursor.getFloat(6));
+                pois.add(poi);
+            } while (cursor.moveToFirst());
+        }
+        return pois;
+    }
+
+    public int deletePOIs(long track_id) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        return database.delete(CREATE_TABLE_POINT, "id_track=" + track_id, null);
+    }
 }

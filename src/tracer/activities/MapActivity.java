@@ -12,7 +12,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.jk.hfh_app.R;
-import tracer.database.CustomPOI;
+import tracer.database.DatabaseHandler;
+import tracer.logicObjects.Track;
 import tracer.view.MapLocation;
 import tracer.logicObjects.POI;
 
@@ -27,10 +28,10 @@ public class MapActivity extends Activity implements LocationListener {
     public static double maxSouth;
     public static double maxEast;
     public static double maxWest;
-    private static Integer numberOfPOI = 0;
-    //    private Location location;
-//    private Location previousLocation;
-//    private CustomPOI poi;
+    private static double distanceValue;
+    private static Integer numberOfPOI;
+    private static long trackNumber;
+
     private POI poi;
     private LocationManager myLocationManager;
     private LocationListener myLocationLister;
@@ -39,7 +40,9 @@ public class MapActivity extends Activity implements LocationListener {
     private TextView distanceView;
     private MapLocation myLocationView;
     private boolean firstPoi = true;
-    private static double distanceValue = 0;
+    private boolean isRecording = false;
+    private static DatabaseHandler databaseHandler;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,54 +60,51 @@ public class MapActivity extends Activity implements LocationListener {
         myLocationView = new MapLocation(this);
         LinearLayout ll = (LinearLayout) findViewById(R.id.ll_mapView);
         ll.addView(myLocationView, ll.getChildCount());
+
+        this.databaseHandler = DatabaseHandler.getInstance(this);
     }
+
+    private static long lastTime;
+    private static long startTime;
+    //ms
+    private static long periodBetweenPOIs = 4000;
 
     @Override
     public void onLocationChanged(Location location) {
-        this.poi = new POI(location);
-        this.poi.order_id = MapActivity.numberOfPOI;
-        MapActivity.numberOfPOI++;
+        if (isRecording) {
+            this.poi = new POI(location);
+            this.poi.order_id = MapActivity.numberOfPOI;
+            MapActivity.numberOfPOI++;
 
-//        try {
-//            POI pnull = new POI((Location) null);
-//        } catch (Exception e) {
-//            Log.e("pnull", e.toString());
-//        }
-//        try {
 
-//        } catch (Exception e) {
-//            Log.e("pempty", e.toString());
-//        }
-//        try {
-//            POI pstringnull = new POI((String) null);
-//        } catch (Exception e) {
-//            Log.e("pstringnull", e.toString());
-//        }
-//        try {
-//            POI pLocationEmpty = new POI(new Location(""));
-//        } catch (Exception e) {
-//            Log.e("pLocationEmpty", e.toString());
-//        }
+            if (firstPoi == false) {
+                POI lastPoi = poiList.get(poiList.size() - 1);
+                if ((poi.getTime() - lastTime) > periodBetweenPOIs) {
+                    lastTime = poi.getTime();
+                    MapActivity.distanceValue += this.poi.distanceTo(lastPoi);
+                    poiList.add(poi);
+                    Log.i("countedTime", String.valueOf(lastTime - startTime));
+                }
+                this.distanceView.setText(String.format("%.2f km, poi: %d", MapActivity.distanceValue / 1000, poiList.size()));
+                checkMaximumDimensions(this.poi);
 
-        if (firstPoi == false) {
-            POI lastPoi = poiList.get(poiList.size() - 1);
-//            Location last = new Location(null);
+                // olny first iteration
+            } else {
+                lastTime = poi.getTime();
+                startTime = poi.getTime();
+                poiList.add(poi);
+                MapActivity.maxNorth = location.getLatitude();
+                MapActivity.maxSouth = location.getLatitude();
+                MapActivity.maxEast = location.getLongitude();
+                MapActivity.maxWest = location.getLongitude();
+            }
 
-            MapActivity.distanceValue += this.poi.distanceTo(lastPoi);
-            this.distanceView.setText(String.format("%.2f km, poi: %d", MapActivity.distanceValue / 1000, poiList.size()));
-            checkMaximumDimensions(this.poi);
-        } else {
-            MapActivity.maxNorth = location.getLatitude();
-            MapActivity.maxSouth = location.getLatitude();
-            MapActivity.maxEast = location.getLongitude();
-            MapActivity.maxWest = location.getLongitude();
+            this.firstPoi = false;
+
+            this.lattitudeView.setText(String.valueOf(poi.getLatitude()));
+            this.longitudeView.setText(String.valueOf(poi.getLongitude()));
+            myLocationView.invalidate();
         }
-
-        this.firstPoi = false;
-        poiList.add(poi);
-        this.lattitudeView.setText(String.valueOf(poi.getLatitude()));
-        this.longitudeView.setText(String.valueOf(poi.getLongitude()));
-        myLocationView.invalidate();
     }
 
 
@@ -121,10 +121,6 @@ public class MapActivity extends Activity implements LocationListener {
         if (poi.getLatitude() < maxSouth) {
             maxSouth = poi.getLatitude();
         }
-        Log.i("maxNorth: ", String.valueOf(MapActivity.maxNorth));
-        Log.i("maxSouth: ", String.valueOf(MapActivity.maxSouth));
-        Log.i("maxEast: ", String.valueOf(MapActivity.maxEast));
-        Log.i("maxWest: ", String.valueOf(MapActivity.maxWest));
     }
 
     @Override
@@ -144,13 +140,35 @@ public class MapActivity extends Activity implements LocationListener {
     public void recording(View view) {
         if (((Button) view).getText().toString().equals("Start recording")) {
             ((Button) view).setText("Stop recording");
+            this.isRecording = true;
+            numberOfPOI = 0;
+            distanceValue = 0;
+            firstPoi = true;
+            poiList = new ArrayList<POI>();
+
+            Track track = new Track();
+            track.time = 10;
+            track.distance = MapActivity.distanceValue;
+            track.name = "tmpName";
+            track.altitude = 13.13;
+//            databaseHandler.dropDatabase(this);
+            databaseHandler.createTrack(track);
+            trackNumber = databaseHandler.selectMaxTrackID();
+
             // save track in database (set in settings if save automatically)
             //
 //            Location loca = poiList.get(0);
 
         } else {
             ((Button) view).setText("Start recording");
-
+            this.isRecording = false;
+            Track track = new Track();
+            track.time = 10;
+            track.distance = MapActivity.distanceValue;
+            track.name = "tmpName";
+            track.altitude = 13.13;
+            databaseHandler.createTrack(track);
+            databaseHandler.createPOIs(poiList, trackNumber);
         }
     }
 
