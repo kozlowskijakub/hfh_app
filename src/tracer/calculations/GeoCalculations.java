@@ -10,6 +10,7 @@ import android.location.Location;
  * To change this template use File | Settings | File Templates.
  */
 public class GeoCalculations {
+
     public static double countDistance(double lat1, double lng1, double lat2, double lng2) {
         //double earthRadius = 3958.75; in miles
         double earthRadius = 6371.009;

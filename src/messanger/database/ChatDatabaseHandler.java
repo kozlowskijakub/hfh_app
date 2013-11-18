@@ -3,12 +3,14 @@ package messanger.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import messanger.Message;
+import messanger.RabbitMessage;
 import tracer.database.DatabaseHandler;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,11 +46,22 @@ public class ChatDatabaseHandler extends SQLiteOpenHelper {
     }
 
     public static ChatDatabaseHandler getInstance(Context context) {
-
         if (database == null) {
             database = new ChatDatabaseHandler(context);
         }
         return database;
+    }
+
+    public void dropTables() {
+        SQLiteDatabase database = this.getWritableDatabase();
+        database.execSQL("DROP TABLE IF EXISTS outMsg");
+        database.execSQL("DROP TABLE IF EXISTS inMsg");
+    }
+
+    public void createTables() {
+        SQLiteDatabase database = this.getWritableDatabase();
+        database.execSQL(CREATE_TABLE_IN_MSG);
+        database.execSQL(CREATE_TABLE_OUT_MSG);
     }
 
     @Override
@@ -59,48 +72,38 @@ public class ChatDatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//        db.execSQL("DROP TABLE IF EXISTS " + TABLE_IN_MSG);
-//        db.execSQL("DROP TABLE IF EXISTS " + TABLE_OUT_MSG);
         onCreate(db);
     }
 
-    public void createOutMsg(Message msg) {
+    public void createOutMsg(RabbitMessage msg) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
         values.put("content", msg.content);
         values.put("time", msg.time);
-
         long x = database.insert(TABLE_OUT_MSG, null, values);
-        Log.i("createOutMsg", String.valueOf(x));
-
-
-
+//        Log.i("createOutMsg", String.valueOf(x));
     }
 
-    public void createInMsg(Message msg) {
+    public void createInMsg(RabbitMessage msg) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
         values.put("content", msg.content);
         values.put("time", msg.time);
-
         database.insert(TABLE_OUT_MSG, null, values);
-
-
-
     }
 
-    public List<Message> getInMsgs() {
+    public List<RabbitMessage> getInMsgs() {
         SQLiteDatabase database = this.getReadableDatabase();
-        List<Message> inMsgs = new ArrayList<Message>();
-        Message msg;
+        List<RabbitMessage> inMsgs = new ArrayList<RabbitMessage>();
+        RabbitMessage msg;
         String query = "SELECT * FROM " + TABLE_IN_MSG;
         Cursor cursor = database.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
             do {
-                msg = new Message();
+                msg = new RabbitMessage();
                 msg.content = cursor.getString(cursor.getColumnIndex("content"));
                 msg.time = cursor.getLong(cursor.getColumnIndex("time"));
                 inMsgs.add(msg);
@@ -109,16 +112,16 @@ public class ChatDatabaseHandler extends SQLiteOpenHelper {
         return inMsgs;
     }
 
-    public List<Message> getOutMsgs() {
+    public List<RabbitMessage> getOutMsgs() {
         SQLiteDatabase database = this.getReadableDatabase();
-        List<Message> inMsgs = new ArrayList<Message>();
-        Message msg;
+        List<RabbitMessage> inMsgs = new ArrayList<RabbitMessage>();
+        RabbitMessage msg;
         String query = "SELECT * FROM " + TABLE_OUT_MSG;
         Cursor cursor = database.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
             do {
-                msg = new Message();
+                msg = new RabbitMessage();
                 msg.content = cursor.getString(cursor.getColumnIndex("content"));
                 msg.time = cursor.getLong(cursor.getColumnIndex("time"));
                 inMsgs.add(msg);
@@ -127,8 +130,10 @@ public class ChatDatabaseHandler extends SQLiteOpenHelper {
         return inMsgs;
     }
 
-//    public long createOutMsg() {
-//
-//        return 0;
-//    }
+    public void dropDatabase() {
+//        SQLiteDatabase database = this.getWritableDatabase();
+//        database.deleteDatabase(new File(DATABASE_NAME));
+
+
+    }
 }

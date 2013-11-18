@@ -75,6 +75,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     public void dropDatabase(Context context) {
+        Log.e("value", "som value");
         try {
             context.deleteDatabase(DATABASE_NAME);
         } catch (Exception e) {

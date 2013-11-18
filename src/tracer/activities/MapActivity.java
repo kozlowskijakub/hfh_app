@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.jk.hfh_app.R;
+import messanger.ChatActivity;
+import messanger.rabbit.RabbitSendPosition;
 import tracer.database.DatabaseHandler;
 import tracer.logicObjects.Track;
 import tracer.view.MapLocation;
@@ -34,7 +36,6 @@ public class MapActivity extends Activity implements LocationListener {
 
     private POI poi;
     private LocationManager myLocationManager;
-    private LocationListener myLocationLister;
     private TextView lattitudeView;
     private TextView longitudeView;
     private TextView distanceView;
@@ -50,8 +51,7 @@ public class MapActivity extends Activity implements LocationListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mapview);
         myLocationManager = (LocationManager) getSystemService(this.LOCATION_SERVICE);
-        myLocationLister = this;
-        myLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, myLocationLister);
+        myLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
 
         this.lattitudeView = (TextView) findViewById(R.id.tv_lattitude);
         this.longitudeView = (TextView) findViewById(R.id.tv_longitude);
@@ -61,13 +61,22 @@ public class MapActivity extends Activity implements LocationListener {
         LinearLayout ll = (LinearLayout) findViewById(R.id.ll_mapView);
         ll.addView(myLocationView, ll.getChildCount());
 
+//        Object o = this;
+//
+//        try {
+//            databaseHandler.dropDatabase(this);
+//        } catch (Exception e) {
+//            Log.e("databaseHandler", e.toString());
+//        }
         this.databaseHandler = DatabaseHandler.getInstance(this);
+
     }
 
     private static long lastTime;
     private static long startTime;
+
     //ms
-    private static long periodBetweenPOIs = 4000;
+    private static long periodBetweenPOIs = 100;
 
     @Override
     public void onLocationChanged(Location location) {
@@ -79,20 +88,23 @@ public class MapActivity extends Activity implements LocationListener {
 
             if (firstPoi == false) {
                 POI lastPoi = poiList.get(poiList.size() - 1);
-                if ((poi.getTime() - lastTime) > periodBetweenPOIs) {
-                    lastTime = poi.getTime();
+                if ((this.poi.getTime() - lastTime) > periodBetweenPOIs) {
+                    lastTime = this.poi.getTime();
                     MapActivity.distanceValue += this.poi.distanceTo(lastPoi);
-                    poiList.add(poi);
+                    poiList.add(this.poi);
                     Log.i("countedTime", String.valueOf(lastTime - startTime));
+                    new RabbitSendPosition().execute(this.poi);
+                    Log.i("poi number:", String.valueOf(poiList.size()));
+
                 }
                 this.distanceView.setText(String.format("%.2f km, poi: %d", MapActivity.distanceValue / 1000, poiList.size()));
                 checkMaximumDimensions(this.poi);
 
                 // olny first iteration
             } else {
-                lastTime = poi.getTime();
-                startTime = poi.getTime();
-                poiList.add(poi);
+                lastTime = this.poi.getTime();
+                startTime = this.poi.getTime();
+                poiList.add(this.poi);
                 MapActivity.maxNorth = location.getLatitude();
                 MapActivity.maxSouth = location.getLatitude();
                 MapActivity.maxEast = location.getLongitude();
@@ -101,9 +113,9 @@ public class MapActivity extends Activity implements LocationListener {
 
             this.firstPoi = false;
 
-            this.lattitudeView.setText(String.valueOf(poi.getLatitude()));
-            this.longitudeView.setText(String.valueOf(poi.getLongitude()));
-            myLocationView.invalidate();
+            this.lattitudeView.setText(String.valueOf(this.poi.getLatitude()));
+            this.longitudeView.setText(String.valueOf(this.poi.getLongitude()));
+            this.myLocationView.invalidate();
         }
     }
 
@@ -123,19 +135,6 @@ public class MapActivity extends Activity implements LocationListener {
         }
     }
 
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-
-    }
-
-    @Override
-    public void onProviderEnabled(String provider) {
-
-    }
-
-    @Override
-    public void onProviderDisabled(String provider) {
-    }
 
     public void recording(View view) {
         if (((Button) view).getText().toString().equals("Start recording")) {
@@ -172,12 +171,39 @@ public class MapActivity extends Activity implements LocationListener {
         }
     }
 
-    public void drawGPS(View view) {
-        Intent intent = new Intent(this, MapMainActivity.class);
+    //    public void sendMessage(View view) {
+    public void showMessages(View view) {
+
         try {
-            startActivity(intent);
+            Intent messagesIntent = new Intent(this, ChatActivity.class);
+            this.startActivity(messagesIntent);
         } catch (Exception e) {
-            Log.e("mapDrawGPS", e.toString());
+            Log.e("showMessages", e.toString());
         }
+
+    }
+
+//    public void drawGPS(View view) {
+//        Intent intent = new Intent(this, SatelliteActivity.class);
+//        try {
+//            startActivity(intent);
+//        } catch (Exception e) {
+//            Log.e("mapDrawGPS", e.toString());
+//        }
+//    }
+
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
     }
 }
